@@ -8,7 +8,8 @@ export default{
 components:{ AppTitle, AppCharactersList, AppSelect },
 data() {
   return{
-    store:store
+    store:store,
+
   }
 },
 created(){
@@ -22,6 +23,19 @@ methods: {
             this.store.cardList = resp.data.data
             
         });
+    },
+  
+    handleSelect(){
+      console.log("ciao");
+      axios
+      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?", {
+        params: {
+          archetype: this.store.selectOption,
+        }
+      })
+      .then((resp) => {
+        this.store.cardList = resp.data.data;
+      })
     }
 },
 
@@ -31,7 +45,7 @@ methods: {
 
 <template>
 <AppTitle/>
-<AppSelect/>
+<AppSelect @performSelect="handleSelect"/>
 <AppCharactersList/>
 
 

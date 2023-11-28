@@ -1,15 +1,20 @@
 <script>
+import { store } from "../store";
 export default{
-        
+       data(){
+        return{
+            store,
+        };
+       } 
 }
 </script>
 
 <template>
 <section class="flex ">
-    <select name="archetipo" id="archetype">
+    <select name="archetipo" id="archetype" @change="$emit( 'performSelect' )" v-model="store.selectOption" >
   <option value="alien">Alien</option>
-  <option value="saab">Ally of Justice</option>
-  <option value="mercedes">Ancient Gear</option>
+  <option value="Ally of Justice">Ally of Justice</option>
+  <option value="Ancient Gear">Ancient Gear</option>
 </select>
 </section>
 </template>
