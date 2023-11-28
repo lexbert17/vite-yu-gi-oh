@@ -10,15 +10,20 @@ data() {
     store:store
   }
 },
+created(){
+this.getCharacters();
+},
 methods: {
     getCharacters(){ 
         axios
         .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
         .then(resp =>{
             this.store.cardList = resp.data.data
+            
         });
     }
 },
+
 }
 
 </script>
