@@ -12,8 +12,8 @@ export default{
 </script>
 
 <template>
-    <section class="container mt-5">
-        <h2>lista personaggi</h2>
+    <section class="container">
+     
         <div class="row row-cols-4 g-3">
             <div class="col" v-for="character in store.cardList">
             <AppCharacterCard :character="character" />

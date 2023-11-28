@@ -3,8 +3,9 @@ import AppTitle from './components/AppTitle.vue';
 import AppCharactersList from './components/AppCharactersList.vue';
 import { store } from "./store";
 import axios from 'axios';
+import AppSelect from './components/AppSelect.vue';
 export default{
-components:{ AppTitle, AppCharactersList },
+components:{ AppTitle, AppCharactersList, AppSelect },
 data() {
   return{
     store:store
@@ -30,6 +31,7 @@ methods: {
 
 <template>
 <AppTitle/>
+<AppSelect/>
 <AppCharactersList/>
 
 
